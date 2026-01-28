@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>itisus Admin | Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body class="admin-login">
+    <div class="login-container">
+        <img src="img/itisus logo1.png" alt="itisus Logo" class="logo">
+        <h2>Admin Dashboard</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="admin@itisus.com" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="••••••••" required>
+            </div>
+            <div id="loginError"></div>
+            <button type="submit" class="login-btn" id="loginBtn">Sign In</button>
+        </form>
+        <p style="margin-top: 20px; font-size: 0.8em; color: #888;">
+            Protected Area. Authorized Personnel Only.
+        </p>
+    </div>
+
+    <!-- Supabase & Logic -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client.js"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>itisus Admin | Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body class="admin-body">
+    <!-- Header -->
+    <header class="admin-header">
+        <img src="img/itisus logo1.png" alt="itisus Logo" class="logo">
+        <div class="admin-user-menu">
+            <span id="userEmail">Loading...</span>
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+        </div>
+    </header>
+
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-item active" data-tab="messages">
+                    <i class="ri-message-2-line"></i> General Inquiries
+                </div>
+                <div class="nav-item" data-tab="quotes">
+                    <i class="ri-file-list-3-line"></i> Quote Requests
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-content">
+
+            <!-- SECTION: Messages -->
+            <section id="messages-section" class="dashboard-section active">
+                <div class="section-header">
+                    <h2>General Inquiries</h2>
+                    <button class="refresh-btn" onclick="loadMessages()">
+                        <i class="ri-refresh-line"></i> Refresh
+                    </button>
+                </div>
+                <div class="table-container">
+                    <table id="messagesTable">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Subject</th>
+                                <th>Message</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data injected via JS -->
+                        </tbody>
+                    </table>
+                    <div id="messagesLoading" class="empty-state">Loading messages...</div>
+                </div>
+            </section>
+
+            <!-- SECTION: Quotes -->
+            <section id="quotes-section" class="dashboard-section">
+                <div class="section-header">
+                    <h2>Quote Requests</h2>
+                    <button class="refresh-btn" onclick="loadQuotes()">
+                        <i class="ri-refresh-line"></i> Refresh
+                    </button>
+                </div>
+                <div class="table-container">
+                    <table id="quotesTable">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Service</th>
+                                <th>Name</th>
+                                <th>Email/Phone</th>
+                                <th>Message</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data injected via JS -->
+                        </tbody>
+                    </table>
+                    <div id="quotesLoading" class="empty-state">Loading quotes...</div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Supabase & Logic -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client.js"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>
